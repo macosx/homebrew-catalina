@@ -6,28 +6,6 @@ class GoAT124 < Formula
     version "1.24.11"
     license "BSD-3-Clause"
   
-    livecheck do
-      url "https://go.dev/dl/?mode=json"
-      regex(/^go[._-]?v?(1\.24(?:\.\d+)*)[._-]src\.t.+$/i)
-      strategy :json do |json, regex|
-        json.map do |release|
-          next if release["stable"] != true
-          next if release["files"].none? { |file| file["filename"].match?(regex) }
-  
-          release["version"][/(\d+(?:\.\d+)+)/, 1]
-        end
-      end
-    end
-  
-    bottle do
-      sha256 cellar: :any_skip_relocation, arm64_tahoe:   "015118cf40fea9fda481f8a3fb2b0a9993e4c9ab5384bd28164730f7dbb04a51"
-      sha256 cellar: :any_skip_relocation, arm64_sequoia: "015118cf40fea9fda481f8a3fb2b0a9993e4c9ab5384bd28164730f7dbb04a51"
-      sha256 cellar: :any_skip_relocation, arm64_sonoma:  "015118cf40fea9fda481f8a3fb2b0a9993e4c9ab5384bd28164730f7dbb04a51"
-      sha256 cellar: :any_skip_relocation, sonoma:        "ec19a7aee9048e68358bc52c4998cfc6e28e50b8d27780ff3f0d10cfedfc49d0"
-      sha256 cellar: :any_skip_relocation, arm64_linux:   "8112bee8dece9b9a1040212126579e5b1fd48276188bc262e69b4aa2379a0b21"
-      sha256 cellar: :any_skip_relocation, x86_64_linux:  "f61b24360bf1e42a8f5ab284309b81777cdc560426f8e41e5c944ef4e7b11916"
-    end
-  
     keg_only :versioned_formula
     depends_on macos: :catalina
   

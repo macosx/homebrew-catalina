@@ -28,7 +28,6 @@ class Go < Formula
       sha256 cellar: :any_skip_relocation, x86_64_linux:  "f61b24360bf1e42a8f5ab284309b81777cdc560426f8e41e5c944ef4e7b11916"
     end
   
-    # depends_on "go" => :build
     depends_on macos: :catalina
   
     # Don't update this unless this version cannot bootstrap the new version.

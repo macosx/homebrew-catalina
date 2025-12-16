@@ -7,16 +7,9 @@ class GoAT122 < Formula
     sha256 "754363489e2244e72cb49b4ec6ddfd6a2c60b0700f8c4876e11befb1913b11c5"
     version "1.20.14"
     license "BSD-3-Clause"
-  
-    # 移除 macOS 11+ 系统限制（适配 10.15）
-    # on_macos do
-    #   depends_on macos: "11.0"
-    # end
-  
-    # 删除编译依赖（go-bootstrap 不再需要）
-    # depends_on "go-bootstrap" => :build
 
     keg_only :versioned_formula
+    depends_on macos: :catalina
   
     def install
       # 直接解压二进制包到 libexec（无需编译）
