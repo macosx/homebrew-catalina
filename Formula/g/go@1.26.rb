@@ -1,12 +1,12 @@
-class GoAT124 < Formula
+class GoAT126 < Formula
     desc "Open source programming language to build simple/reliable/efficient software"
-    homepage "https://go.dev/"
-    url "https://go.dev/dl/go1.24.11.darwin-amd64.tar.gz"
-    sha256 "c45566cf265e2083cd0324e88648a9c28d0edede7b5fd12f8dc6932155a344c5"
-    version "1.24.11"
+    homepage "https://github.com/alovn/go/"
+    url "https://github.com/alovn/go/releases/download/go1.26.4-macosx/go-1.26.4.darwin-amd64.tar.gz"
+    sha256 "0a18ba8121319809146a8cce349bc1edf2073933d3d4264d4630237fda503ba8"
+    version "1.26.4"
     license "BSD-3-Clause"
   
-    # keg_only :versioned_formula
+    keg_only :versioned_formula
     depends_on macos: :catalina
   
     def install
